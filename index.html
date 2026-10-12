@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOVILL | Electrical Grid Design and Installation</title>
+  <meta name="description" content="KOVILL provides electrical grid design, installation, substation solutions, and maintenance for reliable electrical infrastructure.">
+  <meta name="theme-color" content="#07366B">
+
+  <!-- TODO: make og:image absolute (and add og:url / canonical) once the production domain is known. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOVILL">
+  <meta property="og:title" content="KOVILL | Electrical Grid Design and Installation">
+  <meta property="og:description" content="Electrical grid design, installation, substation solutions, and maintenance for reliable electrical infrastructure.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/logo/kovill_mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-substation-1920.webp" imagesrcset="assets/img/hero-substation-960.webp 960w, assets/img/hero-substation-1920.webp 1920w" imagesizes="100vw" type="image/webp">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <!-- Icon sprite: line icons, blue strokes with orange accents (.ic-accent) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-tower" viewBox="0 0 48 48">
+      <path d="M22 8 24 4l2 4M16 44 22 8h4l6 36M10 14h28M13 22h22M18 32h12M12 14v4M36 14v4M15 22v4M33 22v4M21 14l7.3 8M27 14l-7.3 8M19.7 22 30 32M28.3 22 18 32M18 32l14 12M30 32 16 44"/>
+      <path class="ic-accent" d="M36 40 44 32"/>
+    </symbol>
+    <symbol id="i-engineer" viewBox="0 0 48 48">
+      <path d="M17 20v2a7 7 0 0 0 14 0v-2M10 44v-4a10 10 0 0 1 10-10h8a10 10 0 0 1 10 10v4M20 30l4 6 4-6M24 36v8"/>
+      <path class="ic-accent" d="M15 19a9 9 0 0 1 18 0M13 19h22M24 10v5"/>
+    </symbol>
+    <symbol id="i-transformer" viewBox="0 0 48 48">
+      <path d="M10 18h28v20H10zM6 22v12M6 22h4M6 34h4M42 22v12M38 22h4M38 34h4M8 42h32M16 18V7M24 18V7M32 18V7M13 10h6M13 14h6M21 10h6M21 14h6M29 10h6M29 14h6"/>
+      <path class="ic-accent" d="M25.5 22 20 29.5h7L22.5 35"/>
+    </symbol>
+    <symbol id="i-gear" viewBox="0 0 48 48">
+      <path d="M20.12 9.51 20.7 5.29h6.6l.58 4.22a15 15 0 0 1 3.62 1.5l3.4-2.57 4.66 4.66-2.57 3.4a15 15 0 0 1 1.5 3.62l4.22.58v6.6l-4.22.58a15 15 0 0 1-1.5 3.62l2.57 3.4-4.66 4.66-3.4-2.57a15 15 0 0 1-3.62 1.5l-.58 4.22h-6.6l-.58-4.22a15 15 0 0 1-3.62-1.5l-3.4 2.57-4.66-4.66 2.57-3.4a15 15 0 0 1-1.5-3.62l-4.22-.58v-6.6l4.22-.58a15 15 0 0 1 1.5-3.62L8.44 13.1l4.66-4.66 3.4 2.57a15 15 0 0 1 3.62-1.5Z"/>
+      <circle class="ic-accent" cx="24" cy="24" r="6"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 48 48">
+      <path d="M8 12h32v28H8zM8 20h32M16 7v9M32 7v9"/>
+      <path class="ic-accent" d="M15 27h4M22 27h4M29 27h4M15 33h4M22 33h4"/>
+    </symbol>
+    <symbol id="i-flow" viewBox="0 0 48 48">
+      <circle cx="8" cy="24" r="4"/><circle cx="24" cy="24" r="4"/><circle cx="40" cy="24" r="4"/>
+      <path class="ic-accent" d="M13 24h6M16 21l3 3-3 3M29 24h6M32 21l3 3-3 3"/>
+      <path d="M8 14V8h32v6M8 34v6h32v-6"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 48 48">
+      <path d="M24 5 39 11v12c0 9.5-6.3 16.8-15 20-8.7-3.2-15-10.5-15-20V11z"/>
+      <path class="ic-accent" d="M26.5 14 20 25h8l-5.5 10"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="KOVILL, back to top">
+        <img class="brand-mark" src="assets/logo/kovill_mark.svg" alt="" width="48" height="48">
+        <span class="brand-text" aria-hidden="true">
+          <span class="brand-name">KOVILL</span>
+          <span class="brand-since">Since 2003</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#process">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="#contact">Request a consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero-media">
+        <source type="image/webp" srcset="assets/img/hero-substation-960.webp 960w, assets/img/hero-substation-1920.webp 1920w" sizes="100vw">
+        <img src="assets/img/hero-substation-1920.jpg" srcset="assets/img/hero-substation-960.jpg 960w, assets/img/hero-substation-1920.jpg 1920w" sizes="100vw"
+             alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+      </picture>
+      <svg class="hero-schematic" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+        <path d="M0 120h600M0 300h600M0 480h600M120 0v600M300 0v600M480 0v600"/>
+        <path class="hl" d="M120 480h180v-180h180"/>
+        <circle cx="300" cy="300" r="5"/><circle cx="480" cy="300" r="5"/><circle cx="120" cy="480" r="5"/>
+        <rect class="hl-fill" x="296" y="476" width="8" height="8"/>
+      </svg>
+      <div class="container hero-inner">
+        <p class="eyebrow eyebrow-light">Electrical infrastructure &amp; engineering</p>
+        <h1 class="hero-title" id="hero-title">
+          <span>Powering the grid.</span>
+          <span class="accent">Building tomorrow.</span>
+        </h1>
+        <p class="hero-lead">We design and install electrical grid infrastructure, from distribution networks to complex substations, with a focus on reliability, safety, and long-term performance.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#contact">Request a consultation <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline-light" href="#services">Our capabilities <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <p class="hero-note" aria-hidden="true">Reliable grids.<br>Stronger communities.</p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head section-head-split reveal">
+          <div>
+            <p class="eyebrow">Our services</p>
+            <h2 class="section-title" id="services-title">Complete solutions for modern power systems.</h2>
+          </div>
+          <p class="section-intro">From initial design to installation and long-term maintenance, we deliver reliable, efficient, and future-ready electrical grid solutions.</p>
+        </div>
+
+        <ul class="card-grid" role="list">
+          <li class="service-card reveal">
+            <span class="card-index" aria-hidden="true">01</span>
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-tower"/></svg>
+            <h3 class="card-title">Grid design</h3>
+            <p>Network planning, load-flow analysis, technical design, and engineering documentation.</p>
+            <a class="text-link" href="#contact" data-service="grid-design">Make an enquiry<span class="sr-only"> about grid design</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="service-card reveal">
+            <span class="card-index" aria-hidden="true">02</span>
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-engineer"/></svg>
+            <h3 class="card-title">Electrical installation</h3>
+            <p>Cable systems, distribution networks, switchgear, and control systems.</p>
+            <a class="text-link" href="#contact" data-service="electrical-installation">Make an enquiry<span class="sr-only"> about electrical installation</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="service-card reveal">
+            <span class="card-index" aria-hidden="true">03</span>
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-transformer"/></svg>
+            <h3 class="card-title">Substation solutions</h3>
+            <p>HV/MV substations, transformers, protection systems, and control infrastructure.</p>
+            <a class="text-link" href="#contact" data-service="substation-solutions">Make an enquiry<span class="sr-only"> about substation solutions</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="service-card reveal">
+            <span class="card-index" aria-hidden="true">04</span>
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-gear"/></svg>
+            <h3 class="card-title">Maintenance &amp; modernisation</h3>
+            <p>Inspection, testing, upgrades, and lifecycle extension for critical electrical infrastructure.</p>
+            <a class="text-link" href="#contact" data-service="maintenance-modernisation">Make an enquiry<span class="sr-only"> about maintenance and modernisation</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section class="strengths" aria-labelledby="strengths-title">
+      <h2 class="sr-only" id="strengths-title">Why KOVILL</h2>
+      <div class="container">
+        <ul class="strength-list" role="list">
+          <li class="strength reveal">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#i-calendar"/></svg>
+            <h3 class="strength-title">Since 2003</h3>
+            <p>More than 20 years of industry experience.</p>
+          </li>
+          <li class="strength reveal">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#i-tower"/></svg>
+            <h3 class="strength-title">Grid infrastructure</h3>
+            <p>From distribution networks to high-voltage substations.</p>
+          </li>
+          <li class="strength reveal">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#i-flow"/></svg>
+            <h3 class="strength-title">End-to-end delivery</h3>
+            <p>Design, installation, and maintenance.</p>
+          </li>
+          <li class="strength reveal">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#i-shield"/></svg>
+            <h3 class="strength-title">Safety &amp; reliability</h3>
+            <p>Engineering solutions built around operational reliability.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS
+         Illustrative project categories with licensed stock photography.
+         Replace with real case studies and the company's own photographs when available. -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Featured projects</p>
+          <h2 class="section-title" id="projects-title">Proven expertise. Real results.</h2>
+          <p class="section-intro">Representative examples of the infrastructure we design, install, and maintain.</p>
+        </div>
+
+        <ul class="project-grid" role="list">
+          <li class="project-card reveal">
+            <div class="project-media">
+              <picture>
+                <source type="image/webp" srcset="assets/img/project-substation.webp">
+                <img src="assets/img/project-substation.jpg" alt="Switchgear and surge arresters on steel gantries at a high-voltage substation" width="800" height="560" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="project-body">
+              <h3 class="card-title">Substation infrastructure</h3>
+              <p>Design and installation of electrical substation infrastructure.</p>
+              <a class="text-link stretched" href="#contact" data-service="substation-solutions">Discuss a similar project<span class="sr-only">: substation infrastructure</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="project-card reveal">
+            <div class="project-media">
+              <picture>
+                <source type="image/webp" srcset="assets/img/project-distribution.webp">
+                <img src="assets/img/project-distribution.jpg" alt="Lattice transmission towers and overhead lines silhouetted against a sunset" width="800" height="560" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="project-body">
+              <h3 class="card-title">Distribution networks</h3>
+              <p>Engineering and installation of electrical distribution networks.</p>
+              <a class="text-link stretched" href="#contact" data-service="electrical-installation">Discuss a similar project<span class="sr-only">: distribution networks</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="project-card reveal">
+            <div class="project-media">
+              <picture>
+                <source type="image/webp" srcset="assets/img/project-transformer.webp">
+                <img src="assets/img/project-transformer.jpg" alt="Large high-voltage power transformer inside a substation" width="800" height="560" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="project-body">
+              <h3 class="card-title">Transformer stations</h3>
+              <p>Installation, integration, and commissioning of transformer station equipment.</p>
+              <a class="text-link stretched" href="#contact" data-service="substation-solutions">Discuss a similar project<span class="sr-only">: transformer stations</span> <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESS / ABOUT -->
+    <section class="section section-light" id="process" aria-labelledby="process-title">
+      <div class="container process-layout">
+        <div class="section-head reveal">
+          <p class="eyebrow">Our process</p>
+          <h2 class="section-title" id="process-title">From planning to operation.</h2>
+          <p class="section-intro">A structured approach from the first site assessment to long-term operational support.</p>
+        </div>
+        <ol class="steps" role="list">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div>
+              <h3 class="step-title"><span class="sr-only">Step 1: </span>Consultation &amp; site assessment</h3>
+              <p>Understand the project requirements, operational constraints, and site conditions.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div>
+              <h3 class="step-title"><span class="sr-only">Step 2: </span>Design &amp; engineering</h3>
+              <p>Develop the technical solution, engineering documentation, and implementation plan.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div>
+              <h3 class="step-title"><span class="sr-only">Step 3: </span>Installation &amp; commissioning</h3>
+              <p>Coordinate installation and verify that the completed system meets the agreed requirements.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">04</span>
+            <div>
+              <h3 class="step-title"><span class="sr-only">Step 4: </span>Maintenance &amp; support</h3>
+              <p>Support operational reliability through maintenance, inspection, and technical assistance.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <picture class="contact-media">
+        <source type="image/webp" srcset="assets/img/contact-towers.webp">
+        <img src="assets/img/contact-towers.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
+      </picture>
+      <div class="container contact-layout">
+        <div class="contact-intro reveal">
+          <p class="eyebrow eyebrow-light">Contact</p>
+          <h2 class="section-title" id="contact-title">Let’s build a stronger grid.</h2>
+          <p class="contact-lead">Tell us about your project and our team will get back to you to discuss the right solution.</p>
+
+          <!-- TODO: replace placeholders with the company's real contact details. -->
+          <dl class="contact-details">
+            <div><dt>Email</dt><dd><span class="placeholder">[Email address to be supplied]</span></dd></div>
+            <div><dt>Phone</dt><dd><span class="placeholder">[Phone number to be supplied]</span></dd></div>
+            <div><dt>Office</dt><dd><span class="placeholder">[Office address to be supplied]</span></dd></div>
+          </dl>
+        </div>
+
+        <!-- Integration point: set data-endpoint to a POST URL that accepts multipart form data
+             and returns a 2xx status on success (e.g. your own server script or a form service). -->
+        <form class="enquiry-form reveal" id="enquiry-form" data-endpoint="" novalidate>
+          <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="f-name-error">
+              <p class="field-error" id="f-name-error"></p>
+            </div>
+            <div class="field">
+              <label for="f-company">Company <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" required maxlength="160" aria-describedby="f-company-error">
+              <p class="field-error" id="f-company-error"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" aria-describedby="f-email-error">
+              <p class="field-error" id="f-email-error"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone <span class="optional">(optional)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="25" pattern="[0-9+\(\)\-.\s]{6,25}" aria-describedby="f-phone-error">
+              <p class="field-error" id="f-phone-error"></p>
+            </div>
+            <div class="field field-full">
+              <label for="f-service">Service of interest <span class="req" aria-hidden="true">*</span></label>
+              <select id="f-service" name="service" required aria-describedby="f-service-error">
+                <option value="">Select a service</option>
+                <option value="grid-design">Grid design</option>
+                <option value="electrical-installation">Electrical installation</option>
+                <option value="substation-solutions">Substation solutions</option>
+                <option value="maintenance-modernisation">Maintenance and modernisation</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="field-error" id="f-service-error"></p>
+            </div>
+            <div class="field field-full">
+              <label for="f-message">Project details <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" rows="5" required minlength="20" maxlength="5000" aria-describedby="f-message-error"></textarea>
+              <p class="field-error" id="f-message-error"></p>
+            </div>
+            <!-- Honeypot: hidden from people, often filled in by bots. -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+
+          <p class="privacy-note">We use the details you provide only to respond to your enquiry. Read our <a href="privacy.html">privacy notice</a> to learn how your data is handled.</p>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">
+              <span class="btn-label">Send enquiry</span>
+              <svg class="btn-icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="#top" aria-label="KOVILL, back to top">
+          <img class="brand-mark" src="assets/logo/kovill_mark.svg" alt="" width="48" height="48" loading="lazy">
+          <span class="brand-text" aria-hidden="true">
+            <span class="brand-name">KOVILL</span>
+            <span class="brand-since">Since 2003</span>
+          </span>
+        </a>
+        <p class="footer-company">Electrical Grid Design and Installation Ltd.</p>
+        <p>Electrical grid design, installation, substation solutions, and maintenance for reliable electrical infrastructure.</p>
+        <p class="footer-tagline">Powering the grid. Building tomorrow.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer">
+        <h2 class="footer-heading">Navigation</h2>
+        <ul role="list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#process">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h2 class="footer-heading">Services</h2>
+        <ul role="list">
+          <li><a href="#services">Grid design</a></li>
+          <li><a href="#services">Electrical installation</a></li>
+          <li><a href="#services">Substation solutions</a></li>
+          <li><a href="#services">Maintenance &amp; modernisation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-heading">Contact</h2>
+        <ul role="list">
+          <li><span class="placeholder">[Email address to be supplied]</span></li>
+          <li><span class="placeholder">[Phone number to be supplied]</span></li>
+          <li><span class="placeholder">[Office address to be supplied]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 KOVILL – Electrical Grid Design and Installation Ltd. All rights reserved.</p>
+      <p><a href="privacy.html">Privacy policy</a></p>
+      <p class="credits">Photos via Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Umspannwerk_Garenfeld_Erweiterung_3.jpg">“Umspannwerk Garenfeld Erweiterung 3”</a> by Klaus Bärwinkel,
+        <a href="https://commons.wikimedia.org/wiki/File:Transmission_Lines_at_Sunset.jpg">“Transmission Lines at Sunset”</a> by Kkiefuik,
+        <a href="https://commons.wikimedia.org/wiki/File:Electrical_Transmission_Towers,_Ottawa_TC001.jpg">“Electrical Transmission Towers, Ottawa”</a> by ImagePerson
+        (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, cropped); other photos CC0.</p>
+    </div>
+  </footer>
+</body>
+</html>
