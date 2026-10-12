@@ -1,2 +1,4 @@
 .DS_Store
 .claude/
+# Review documents for the client (not part of the website)
+handover/
