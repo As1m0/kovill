@@ -66,21 +66,62 @@
     }
   });
 
-  const messages = {
-    name: { valueMissing: 'Please enter your name.' },
-    company: { valueMissing: 'Please enter your company name.' },
-    email: {
-      valueMissing: 'Please enter your email address.',
-      typeMismatch: 'Please enter a valid email address, for example name@company.com.',
-      patternMismatch: 'Please enter a valid email address, for example name@company.com.',
+  // UI strings per page language (<html lang>). Hungarian is the default.
+  const strings = {
+    hu: {
+      fields: {
+        name: { valueMissing: 'Kérjük, adja meg a nevét.' },
+        company: { valueMissing: 'Kérjük, adja meg a cég nevét.' },
+        email: {
+          valueMissing: 'Kérjük, adja meg az e-mail-címét.',
+          typeMismatch: 'Kérjük, érvényes e-mail-címet adjon meg, például nev@ceg.hu.',
+          patternMismatch: 'Kérjük, érvényes e-mail-címet adjon meg, például nev@ceg.hu.',
+        },
+        phone: { patternMismatch: 'Kérjük, érvényes telefonszámot adjon meg (számjegyek, szóköz, +, - vagy zárójel).' },
+        service: { valueMissing: 'Kérjük, válassza ki, melyik szolgáltatás érdekli.' },
+        message: {
+          valueMissing: 'Kérjük, írja le röviden a projektjét.',
+          tooShort: 'Kérjük, adjon meg néhány további részletet (legalább 20 karakter).',
+        },
+      },
+      checkField: 'Kérjük, ellenőrizze ezt a mezőt.',
+      fixOne: 'Kérjük, javítsa a megjelölt mezőt.',
+      fixMany: (n) => `Kérjük, javítsa a megjelölt ${n} mezőt.`,
+      spam: 'Az üzenetet nem sikerült elküldeni. Kérjük, várjon egy pillanatot, majd próbálja újra.',
+      notConfigured: 'Az online üzenetküldés még nincs bekapcsolva, ezért üzenetét nem küldtük el. A megadott adatok az űrlapon maradtak. Addig is kérjük, vegye fel a kapcsolatot a KOVILL-lal közvetlenül.',
+      sending: 'Küldés…',
+      success: 'Köszönjük! Üzenetét elküldtük, munkatársaink hamarosan felveszik Önnel a kapcsolatot.',
+      failure: 'Sajnáljuk, az üzenetet nem sikerült elküldeni. Kérjük, próbálja újra később.',
     },
-    phone: { patternMismatch: 'Please enter a valid phone number using digits, spaces, +, - or brackets.' },
-    service: { valueMissing: 'Please choose the service you are interested in.' },
-    message: {
-      valueMissing: 'Please tell us about your project.',
-      tooShort: 'Please add a little more detail (at least 20 characters).',
+    en: {
+      fields: {
+        name: { valueMissing: 'Please enter your name.' },
+        company: { valueMissing: 'Please enter your company name.' },
+        email: {
+          valueMissing: 'Please enter your email address.',
+          typeMismatch: 'Please enter a valid email address, for example name@company.com.',
+          patternMismatch: 'Please enter a valid email address, for example name@company.com.',
+        },
+        phone: { patternMismatch: 'Please enter a valid phone number using digits, spaces, +, - or brackets.' },
+        service: { valueMissing: 'Please choose the service you are interested in.' },
+        message: {
+          valueMissing: 'Please tell us about your project.',
+          tooShort: 'Please add a little more detail (at least 20 characters).',
+        },
+      },
+      checkField: 'Please check this field.',
+      fixOne: 'Please correct the highlighted field.',
+      fixMany: (n) => `Please correct the ${n} highlighted fields.`,
+      spam: 'Your enquiry could not be sent. Please wait a moment and try again.',
+      notConfigured: 'Online enquiries are not connected yet, so your message has not been sent. Your details are still in the form. Please contact KOVILL directly in the meantime.',
+      sending: 'Sending…',
+      success: 'Thank you. Your enquiry has been sent and our team will get back to you.',
+      failure: 'Sorry, your enquiry could not be sent. Please try again later.',
     },
   };
+  const t = strings[document.documentElement.lang.slice(0, 2)] || strings.hu;
+  const messages = t.fields;
+  const idleLabel = submitLabel.textContent;
 
   // Returns true when valid. `show` = false only clears errors, never adds them.
   function validateField(field, show = true) {
@@ -92,7 +133,7 @@
       message = messages[field.name].tooShort;
     } else if (!field.validity.valid) {
       const key = ['valueMissing', 'typeMismatch', 'patternMismatch', 'tooShort', 'tooLong'].find((k) => field.validity[k]);
-      message = (messages[field.name] && messages[field.name][key]) || 'Please check this field.';
+      message = (messages[field.name] && messages[field.name][key]) || t.checkField;
     }
     if (message && !show) return false;
     field.setAttribute('aria-invalid', String(Boolean(message)));
@@ -114,7 +155,7 @@
   const setBusy = (busy) => {
     submitBtn.disabled = busy;
     submitBtn.setAttribute('aria-busy', String(busy));
-    submitLabel.textContent = busy ? 'Sending…' : 'Send enquiry';
+    submitLabel.textContent = busy ? t.sending : idleLabel;
   };
 
   form.addEventListener('submit', async (e) => {
@@ -123,9 +164,7 @@
 
     const invalid = fields.filter((f) => !validateField(f));
     if (invalid.length) {
-      setStatus('error', invalid.length === 1
-        ? 'Please correct the highlighted field.'
-        : `Please correct the ${invalid.length} highlighted fields.`);
+      setStatus('error', invalid.length === 1 ? t.fixOne : t.fixMany(invalid.length));
       invalid[0].focus();
       return;
     }
@@ -133,14 +172,14 @@
     // ponytail: client-side spam checks only (honeypot + minimum fill time). The receiving
     // server must still validate input and add rate limiting / CAPTCHA.
     if (form.elements.website.value || Date.now() - loadedAt < 3000) {
-      setStatus('error', 'Your enquiry could not be sent. Please wait a moment and try again.');
+      setStatus('error', t.spam);
       return;
     }
 
     const endpoint = form.dataset.endpoint;
     if (!endpoint) {
       // No backend or email service is configured yet: say so honestly instead of faking success.
-      setStatus('info', 'Online enquiries are not connected yet, so your message has not been sent. Your details are still in the form. Please contact KOVILL directly in the meantime.');
+      setStatus('info', t.notConfigured);
       return;
     }
 
@@ -154,9 +193,9 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       form.reset();
       fields.forEach((f) => f.removeAttribute('aria-invalid'));
-      setStatus('success', 'Thank you. Your enquiry has been sent and our team will get back to you.');
+      setStatus('success', t.success);
     } catch (err) {
-      setStatus('error', 'Sorry, your enquiry could not be sent. Please try again later.');
+      setStatus('error', t.failure);
     } finally {
       setBusy(false);
     }
