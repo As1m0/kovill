@@ -88,7 +88,7 @@
       fixOne: 'Kérjük, javítsa a megjelölt mezőt.',
       fixMany: (n) => `Kérjük, javítsa a megjelölt ${n} mezőt.`,
       spam: 'Az üzenetet nem sikerült elküldeni. Kérjük, várjon egy pillanatot, majd próbálja újra.',
-      notConfigured: 'Az online üzenetküldés még nincs bekapcsolva, ezért üzenetét nem küldtük el. A megadott adatok az űrlapon maradtak. Addig is kérjük, vegye fel a kapcsolatot a KOVILL-lal közvetlenül.',
+      notConfigured: 'Az online üzenetküldés még nincs bekapcsolva, ezért üzenetét nem küldtük el. A megadott adatok az űrlapon maradtak. Addig is kérjük, vegye fel a kapcsolatot közvetlenül a KOVILL Kft.-vel.',
       sending: 'Küldés…',
       success: 'Köszönjük! Üzenetét elküldtük, munkatársaink hamarosan felveszik Önnel a kapcsolatot.',
       failure: 'Sajnáljuk, az üzenetet nem sikerült elküldeni. Kérjük, próbálja újra később.',
