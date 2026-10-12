@@ -864,7 +864,6 @@ html:not(.js) .header-inner { flex-wrap: wrap; padding-block: 8px; }
 @media (min-width: 960px) { .footer-grid { grid-template-columns: 2fr 1fr 1.3fr 1.3fr; } }
 
 .footer-brand { display: grid; gap: 12px; align-content: start; }
-.brand-footer .brand-mark { background: var(--white); border-radius: 50%; }
 .brand-footer .brand-name { color: var(--white); }
 .brand-footer .brand-since { color: var(--steel); }
 .brand-footer:hover { text-decoration: none; }
