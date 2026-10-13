@@ -919,7 +919,7 @@ html:not(.js) .header-inner { flex-wrap: wrap; padding-block: 8px; }
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
-/* ---------- Reduced motion ---------- */
+/*
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -929,3 +929,4 @@ html:not(.js) .header-inner { flex-wrap: wrap; padding-block: 8px; }
   .js .reveal { opacity: 1; transform: none; }
   .service-card:hover, .project-card:hover .project-media img { transform: none; }
 }
+*/
