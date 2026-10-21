@@ -417,6 +417,10 @@ html:not(.js) .header-inner { flex-wrap: wrap; padding-block: 8px; }
   text-transform: uppercase;
   color: var(--white);
 }
+/* "Transzformátortól" is one long word: scale with the viewport so it fits down to 320px. */
+@media (max-width: 599.98px) {
+  .hero-title { font-size: 7.2vw; }
+}
 .hero-title span { display: block; }
 .hero-title .accent { color: var(--orange); }
 
